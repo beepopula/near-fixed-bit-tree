@@ -1,7 +1,7 @@
-use crate::*;
+use std::convert::{TryFrom, TryInto};
 
-use borsh::{BorshDeserialize, BorshSerialize};
-use near_sdk::{IntoStorageKey};
+use near_sdk::{borsh::{self, BorshDeserialize, BorshSerialize}, env};
+use serde::{Serialize, Deserialize};
 
 use super::raw_value::RawValue;
 
@@ -271,7 +271,9 @@ impl TreeMap
 mod tests {
     use near_sdk::env;
 
-    use crate::bit_tree::{tree_map::{get_u8}, BitTree};
+    use crate::BitTree;
+
+    use super::get_u8;
 
 
     #[test]

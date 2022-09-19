@@ -1,6 +1,8 @@
-use std::marker::PhantomData;
+use std::{marker::PhantomData, convert::TryInto};
 
-use crate::*;
+use near_sdk::borsh::{self, BorshDeserialize, BorshSerialize};
+use serde::{Serialize, Deserialize};
+
 
 #[derive(BorshSerialize, BorshDeserialize)]
 #[derive(Serialize, Deserialize)]

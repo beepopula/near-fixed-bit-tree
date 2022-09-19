@@ -1,4 +1,5 @@
-use crate::*;
+
+use near_sdk::borsh::{self, BorshDeserialize, BorshSerialize};
 use tree_map::TreeMap;
 
 mod tree_map;
